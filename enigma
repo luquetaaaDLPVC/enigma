@@ -1,0 +1,32 @@
+mapa = {
+    '6': 'f',
+    '5': 'e',
+    '50': 'l',
+    '1': 'i',
+    '26': 'z',
+    'MM': '2000',
+    'R': '18',
+}
+
+cod = "6550126MMR"
+
+codigodecodificado = ''
+i = 0
+
+while i < len(cod):
+  if cod[i:i + 2] in mapa:
+    codigodecodificado += mapa[cod[i:i + 2]]
+    i += 2
+
+  elif cod[i] in mapa:
+    codigodecodificado += mapa[cod[i]]
+    i += 1
+
+  else:
+    print("-Código encontrado.")
+
+    break
+
+mensagemdecodificado = codigodecodificado.replace("200018", "2018")
+
+print("mensagemdecodificado:", codigodecodificado)
